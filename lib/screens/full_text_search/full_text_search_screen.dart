@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otzaria/models/app_model.dart';
 import 'package:otzaria/models/tabs.dart';
-import 'package:otzaria/screens/full_text_search/mimir_full_text_search.dart';
+import 'package:otzaria/screens/full_text_search/tantivy_full_text_search.dart';
 import 'package:otzaria/screens/full_text_search/legacy_full_text_search_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +16,7 @@ class FullTextSearchScreen extends StatelessWidget {
     return ValueListenableBuilder(
       valueListenable: context.read<AppModel>().useFastSearch,
       builder: (context, value, child) => value
-          ? MimirFullTextSearch(
+          ? TantivyFullTextSearch(
               tab: tab,
             )
           : TextFileSearchScreen(

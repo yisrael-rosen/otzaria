@@ -5,7 +5,6 @@ and the some other app settings like dark mode and the seed color*/
 import 'dart:isolate';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_mimir/flutter_mimir.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:fuzzywuzzy/fuzzywuzzy.dart';
 import 'package:hive/hive.dart';
@@ -445,8 +444,8 @@ class AppModel with ChangeNotifier {
     data.createRefsFromLibrary(await library, startIndex);
   }
 
-  addAllTextsToMimir({int start = 0, int end = 100000}) async {
-    data.addAllTextsToMimir(await library, start: start, end: end);
+  addAllTextsToTantivy({int start = 0, int end = 100000}) async {
+    data.addAllTextsToTantivy(await library, start: start, end: end);
   }
 }
 
